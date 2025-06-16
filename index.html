@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergencias y Salud Preventiva</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🚨 Emergencias y Salud Preventiva</h1>
+            <p>Información vital para situaciones críticas y prevención de enfermedades</p>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="#" onclick="showSection('emergencias')" class="nav-link active">📞 Emergencias</a></li>
+                <li><a href="#" onclick="showSection('primeros-auxilios')" class="nav-link">🩹 Primeros Auxilios</a></li>
+                <li><a href="#" onclick="showSection('prevencion')" class="nav-link">🔍 Prevención</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Sección de Números de Emergencia -->
+            <section id="emergencias" class="section active">
+                <h2>📞 Números de Emergencia por Zona</h2>
+                
+                <div class="country-selector">
+                    <label for="country">Selecciona tu región:</label>
+                    <select id="country" onchange="updateEmergencyNumbers()">
+                        <option value="argentina">🇦🇷 Argentina</option>
+                        <option value="chile">🇨🇱 Chile</option>
+                        <option value="mexico">🇲🇽 México</option>
+                        <option value="colombia">🇨🇴 Colombia</option>
+                        <option value="espana">🇪🇸 España</option>
+                        <option value="usa">🇺🇸 Estados Unidos</option>
+                        <option value="brasil">🇧🇷 Brasil</option>
+                    </select>
+                </div>
+
+                <div class="emergency-grid" id="emergency-numbers">
+                    <!-- Los números se llenarán dinámicamente -->
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ IMPORTANTE:</strong> En caso de emergencia real, no dudes en llamar inmediatamente. 
+                    Estos números están disponibles 24/7 y son gratuitos desde cualquier teléfono.
+                </div>
+            </section>
+
+            <!-- Sección de Primeros Auxilios -->
+            <section id="primeros-auxilios" class="section">
+                <h2>🩹 Primeros Auxilios Básicos</h2>
+                
+                <div class="first-aid-grid">
+                    <div class="first-aid-card" onclick="toggleSteps('rcp')">
+                        <div class="icon">❤️</div>
+                        <h3>RCP (Reanimación Cardiopulmonar)</h3>
+                        <p>Técnica vital para salvar vidas en casos de paro cardíaco</p>
+                        <div id="rcp" class="first-aid-steps">
+                            <div class="step">1. Verifica que la persona esté inconsciente y no respire</div>
+                            <div class="step">2. Llama al servicio de emergencias</div>
+                            <div class="step">3. Coloca las manos en el centro del pecho</div>
+                            <div class="step">4. Presiona fuerte y rápido (100-120 por minuto)</div>
+                            <div class="step">5. Alterna 30 compresiones con 2 respiraciones</div>
+                        </div>
+                    </div>
+
+                    <div class="first-aid-card" onclick="toggleSteps('atragantamiento')">
+                        <div class="icon">🫁</div>
+                        <h3>Atragantamiento</h3>
+                        <p>Maniobra de Heimlich para liberar vías respiratorias</p>
+                        <div id="atragantamiento" class="first-aid-steps">
+                            <div class="step">1. Párate detrás de la persona</div>
+                            <div class="step">2. Coloca tus brazos alrededor de su cintura</div>
+                            <div class="step">3. Haz un puño sobre el ombligo</div>
+                            <div class="step">4. Presiona hacia adentro y arriba con fuerza</div>
+                            <div class="step">5. Repite hasta que el objeto salga</div>
+                        </div>
+                    </div>
+
+                    <div class="first-aid-card" onclick="toggleSteps('heridas')">
+                        <div class="icon">🩸</div>
+                        <h3>Control de Hemorragias</h3>
+                        <p>Técnicas para detener el sangrado en heridas</p>
+                        <div id="heridas" class="first-aid-steps">
+                            <div class="step">1. Aplica presión directa sobre la herida</div>
+                            <div class="step">2. Usa un paño limpio o gasa</div>
+                            <div class="step">3. Eleva la zona lesionada si es posible</div>
+                            <div class="step">4. Si la sangre traspasa, añade más gasas sin quitar las anteriores</div>
+                            <div class="step">5. Busca atención médica inmediata</div>
+                        </div>
+                    </div>
+
+                    <div class="first-aid-card" onclick="toggleSteps('quemaduras')">
+                        <div class="icon">🔥</div>
+                        <h3>Quemaduras</h3>
+                        <p>Tratamiento inicial para diferentes tipos de quemaduras</p>
+                        <div id="quemaduras" class="first-aid-steps">
+                            <div class="step">1. Retira la fuente de calor inmediatamente</div>
+                            <div class="step">2. Enfría con agua fría (no helada) por 10-20 minutos</div>
+                            <div class="step">3. Retira joyas antes de que aparezca hinchazón</div>
+                            <div class="step">4. Cubre con vendaje estéril no adherente</div>
+                            <div class="step">5. No rompas las ampollas ni apliques remedios caseros</div>
+                        </div>
+                    </div>
+
+                    <div class="first-aid-card" onclick="toggleSteps('fracturas')">
+                        <div class="icon">🦴</div>
+                        <h3>Fracturas</h3>
+                        <p>Inmovilización y cuidados básicos</p>
+                        <div id="fracturas" class="first-aid-steps">
+                            <div class="step">1. No muevas a la persona innecesariamente</div>
+                            <div class="step">2. Inmoviliza la zona afectada</div>
+                            <div class="step">3. Usa férulas improvisadas si es necesario</div>
+                            <div class="step">4. Controla el dolor y la inflamación</div>
+                            <div class="step">5. Traslada a centro médico inmediatamente</div>
+                        </div>
+                    </div>
+
+                    <div class="first-aid-card" onclick="toggleSteps('desmayo')">
+                        <div class="icon">😵</div>
+                        <h3>Desmayos</h3>
+                        <p>Cómo actuar ante una pérdida de conciencia</p>
+                        <div id="desmayo" class="first-aid-steps">
+                            <div class="step">1. Verifica si la persona respira y tiene pulso</div>
+                            <div class="step">2. Colócala en posición de recuperación</div>
+                            <div class="step">3. Afloja ropa ajustada</div>
+                            <div class="step">4. Mantén las vías respiratorias despejadas</div>
+                            <div class="step">5. Si no recupera conciencia en 2 minutos, llama emergencias</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Prevención -->
+            <section id="prevencion" class="section">
+                <h2>🔍 Prevención y Detección de Enfermedades Crónicas</h2>
+                
+                <div class="prevention-tabs">
+                    <button class="tab-button active" onclick="showTab('diabetes')">Diabetes</button>
+                    <button class="tab-button" onclick="showTab('hipertension')">Hipertensión</button>
+                    <button class="tab-button" onclick="showTab('cardiaca')">Enfermedad Cardíaca</button>
+                    <button class="tab-button" onclick="showTab('cancer')">Cáncer</button>
+                </div>
+
+                <div id="diabetes" class="tab-content active">
+                    <div class="disease-card">
+                        <h4>🍬 Diabetes - Prevención y Detección</h4>
+                        <div class="symptom-list">
+                            <strong>Síntomas de Alerta:</strong>
+                            <ul>
+                                <li>Sed excesiva y micción frecuente</li>
+                                <li>Hambre extrema y pérdida de peso inexplicable</li>
+                                <li>Fatiga y visión borrosa</li>
+                                <li>Heridas que sanan lentamente</li>
+                                <li>Infecciones frecuentes</li>
+                            </ul>
+                        </div>
+                        <strong>Factores de Riesgo:</strong>
+                        <p>Historia familiar, sobrepeso, sedentarismo, edad >45 años, hipertensión</p>
+                        <br>
+                        <strong>Prevención:</strong>
+                        <p>Mantener peso saludable, ejercicio regular (150 min/semana), dieta balanceada baja en azúcares simples, chequeos médicos regulares</p>
+                        <br>
+                        <strong>Pruebas recomendadas:</strong> Glucosa en ayunas, Hemoglobina A1C, Prueba de tolerancia a la glucosa
+                    </div>
+                </div>
+
+                <div id="hipertension" class="tab-content">
+                    <div class="disease-card">
+                        <h4>🩺 Hipertensión - El "Asesino Silencioso"</h4>
+                        <div class="symptom-list">
+                            <strong>Síntomas (frecuentemente ausentes):</strong>
+                            <ul>
+                                <li>Dolores de cabeza persistentes</li>
+                                <li>Mareos o vértigo</li>
+                                <li>Visión borrosa</li>
+                                <li>Dolor en el pecho</li>
+                                <li>Dificultad para respirar</li>
+                            </ul>
+                        </div>
+                        <strong>Factores de Riesgo:</strong>
+                        <p>Edad, historia familiar, sobrepeso, consumo excesivo de sal, sedentarismo, estrés, tabaquismo</p>
+                        <br>
+                        <strong>Prevención:</strong>
+                        <p>Dieta baja en sodio, ejercicio regular, mantener peso saludable, limitar alcohol, no fumar, manejar el estrés</p>
+                        <br>
+                        <strong>Control:</strong> Medición regular de presión arterial (valores normales: <120/80 mmHg)
+                    </div>
+                </div>
+
+                <div id="cardiaca" class="tab-content">
+                    <div class="disease-card">
+                        <h4>❤️ Enfermedad Cardíaca - Protege tu Corazón</h4>
+                        <div class="symptom-list">
+                            <strong>Síntomas de Alerta:</strong>
+                            <ul>
+                                <li>Dolor o presión en el pecho</li>
+                                <li>Dificultad para respirar</li>
+                                <li>Dolor que se irradia al brazo, cuello, mandíbula</li>
+                                <li>Fatiga inusual</li>
+                                <li>Palpitaciones irregulares</li>
+                            </ul>
+                        </div>
+                        <strong>Factores de Riesgo:</strong>
+                        <p>Colesterol alto, hipertensión, diabetes, tabaquismo, obesidad, sedentarismo, edad, género masculino</p>
+                        <br>
+                        <strong>Prevención:</strong>
+                        <p>Ejercicio cardiovascular regular, dieta rica en omega-3, control del colesterol, no fumar, mantener peso saludable</p>
+                        <br>
+                        <strong>Pruebas recomendadas:</strong> Electrocardiograma, perfil lipídico, prueba de esfuerzo
+                    </div>
+                </div>
+
+                <div id="cancer" class="tab-content">
+                    <div class="disease-card">
+                        <h4>🎗️ Cáncer - Detección Temprana</h4>
+                        <div class="symptom-list">
+                            <strong>Señales Generales de Alerta:</strong>
+                            <ul>
+                                <li>Pérdida de peso inexplicable</li>
+                                <li>Fatiga persistente</li>
+                                <li>Cambios en lunares o manchas en la piel</li>
+                                <li>Tos persistente o cambios en la voz</li>
+                                <li>Cambios en hábitos intestinales</li>
+                            </ul>
+                        </div>
+                        <strong>Factores de Riesgo:</strong>
+                        <p>Edad, historia familiar, tabaquismo, exposición solar excesiva, infecciones virales, obesidad</p>
+                        <br>
+                        <strong>Prevención:</strong>
+                        <p>No fumar, protección solar, vacunaciones (VPH, Hepatitis B), dieta rica en antioxidantes, ejercicio regular</p>
+                        <br>
+                        <strong>Exámenes de Screening:</strong>
+                        <ul>
+                            <li>Mamografía (mujeres 40+ años)</li>
+                            <li>Colonoscopía (50+ años)</li>
+                            <li>Papanicolaou (mujeres 21+ años)</li>
+                            <li>Autoexamen de piel mensual</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <strong>🩺 RECUERDA:</strong> La detección temprana salva vidas. Realiza chequeos médicos regulares 
+                    y no ignores los síntomas persistentes. Consulta siempre con profesionales de la salud.
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Emergencias y Salud Preventiva | En caso de emergencia real, contacta servicios de emergencia inmediatamente</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
