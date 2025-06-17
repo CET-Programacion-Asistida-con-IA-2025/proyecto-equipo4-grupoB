@@ -1,33 +1,33 @@
-## Grupo B - Equipo 4
-_Curso de Programación Asistida con IA - Chicas en Tecnología_ 🚀
-
-En este repositorio, se presenta el sitio web realizado durante el curso de programación frontend de CET.
-
-### 📄 Entregas
-**Entrega #1**: planificación de la solución y primeros resultados que obtengamos con la IA:
-
-📝 Edición del Archivo README incluyendo:
-- Definición de la problemática que eligieron abordar
-- Relación con los *Objetivos de Desarrollo Sostenible (ODS)*[^1]
-- Explicación de la solución tecnológica que están desarrollando
-> [!TIP]
-> Aprovechen los [formatos del README](https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) para escribir diferentes secciones
-
-🎨 Moodboard
-
-🧩 Archivos generados con asistencia de IA: ```index.html```, ```style.css```, ```script.js```
-
-
-**Entrega #2 (Final)**: se esperan modificaciones en el código respecto a la entrega anterior, que pueden incluir nuevos archivos o extensión de los existentes (debe haber al menos un archivo de cada lenguaje visto - HTML, CSS y Javascript)
-
-💡 Es una buena idea llevar un registro de lo que cambiamos. Por ejemplo
-```
-- Agregamos Bootstrap para el carrousel de imágenes...
-- Modificamos el texto de la sección de bienvenida...
-- Transformamos los textos sobre redes sociales en links...
-```
-
-Ahora si, ¡A programar! 🚀
-
-
-[^1]: Los Objetivos de Desarrollo Sostenible u Objetivos Globales, también conocidos como Agenda 2030, son 17 objetivos globales interconectados diseñados para ser un «plan para lograr un futuro mejor y más sostenible para todos». Más información en https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/
+# 🏥 **Emergencias y Salud Preventivas**
+### ❗ _Descripción del problema_
+La falta de información sanitaria y el desconocimiento de los protocolos de emergencias médicas representan un grave problema de salud pública. Muchas personas no saben cómo actuar ni a quien llamar ante un caso de emergencia médica, desconocen información básica sobre prevención de enfermedades comunes, y no cuentan con acceso rápido a información confiable sobre vacunas y cuidados de salud. 
+#### **Estos problemas pueden resultar en:**
+ + Retrasos críticos en la atención de emergencias
+ + Propagación de enfermedades prevenibles
+ + Decisiones erróneas en situaciones de crisis sanitaria
+ + Falta de preparación ante emergencias de salud pública
+### 🍀 _Objetivos del proyecto_
+   + Crear una plataforma web de acceso rápido a protocolos de emergencia
+   + Proporcionar información actualizada sobre prevención de enfermedades y vacunas
+   + Facilitar el acceso a servicios de salud cercanos
+   + Educar a la comunidad sobre primeros auxilios básicos
+### 🌱 _Relación con los Objetivos de Desarrollo Sostenible (ODS)_
+El proyecto se relaciona con el objetivo de desarrollo sostenible número 3, buscamos promover el bienestar facilitando la búsqueda a todas las personas en todas las edades al acceso de salud pública de calidad. Brindamos información útil y creamos conciencia sobre la importancia de un estilo de vida saludable tanto física como mental. Para más información [Click Aquí.](https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/)
+### 🫂 _Público Objetivo_
+  + Habitantes de CABA y GBA
+  + Toda persona que necesite información sanitaria confiable
+  + Padres y cuidadores que requieren orientación médica básica
+  + Personas con acceso limitado a servicios de salud
+### 🔔 _Explicación de la solución tecnológica_
+Nuestra plataforma web busca ser útil en caso de emergencias y ser una fuente confiable a la hora de buscar información sanitaria. Nos enfocamos en tres claves: practicidad, rapidez, simplicidad. 
+#### **Tecnologías utilizadas:**
+  + **HTML:** creamos la estructura de nuestro sitio con la finalidad de ser práctico.
+  + **CSS:** diseñamos nuestro sitio de forma simple, garantizando el fácil entendimiento y descartando complicaciones innecesarias.
+  + **JavaScript:** añadimos interactividad rápida y eficaz.
+#### **Funcionalidades Claves:**
+  + Botón de emergencia con llamada directa a servicios médicos
+  + Geolocalización de hospitales y centros de salud cercanos 
+  + Acceso a protocolos básicos de emergencia
+  + Interfaz simple y accesible para todas las edades
+  + Guías paso a paso de primeros auxilios
+  + Protocolos descargables en PDF 
