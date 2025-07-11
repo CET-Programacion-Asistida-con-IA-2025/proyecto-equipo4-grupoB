@@ -1,354 +1,351 @@
-* {
+/* General Body and Font Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, readable font */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --azul-claro: #669BBC;
-    --azul-oscuro: #003049;
-    --beige: #ED7E3;
-    --rojo-claro: #C1121F;
-    --rojo-oscuro: #780000;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
+    background-color: #EBE8E3; /* Light background color */
+    color: #05334A; /* Dark blue for main text */
     line-height: 1.6;
-    color: var(--azul-oscuro);
-    background-color: #f8f9fa;
 }
 
-.header {
-    background: linear-gradient(135deg, var(--rojo-claro) 0%, var(--rojo-oscuro) 100%);
-    color: white;
-    padding: 2rem 0;
+/* Header Styles */
+header {
+    background-color: #05334A; /* Dark blue header */
+    color: #EBE8E3; /* Light text on dark header */
+    padding: 25px 0;
     text-align: center;
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
-.header::before {
-    content: '🚨';
-    position: absolute;
-    font-size: 3rem;
-    opacity: 0.1;
-    top: 20px;
-    left: 50px;
-    animation: pulse 3s infinite;
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    letter-spacing: 1px;
 }
 
-.header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+/* Navigation Bar Styles (Using Flexbox) */
+nav {
+    background-color: #6B9EBD; /* Medium blue nav bar */
+    padding: 10px 20px;
+    display: flex; /* Enable Flexbox */
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Vertically align items in the center */
+    box-shadow: 0 2px 4px rgba[0, 0, 0, 0.1];
 }
 
-.header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.nav {
-    background-color: var(--azul-oscuro);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-
-.nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.nav li {
-    margin: 0 1rem;
-}
-
-.nav a {
+nav a {
+    background-color: transparent;
+    border: none;
+    color: #EBE8E3; /* Light text for nav link */
+    padding: 8px 15px;
     text-decoration: none;
-    color: white;
     font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    transition: all 0.3s ease;
+    font-size: 1.1em;
+    transition: color 0.3s ease; /* Smooth hover effect */
 }
 
-.nav a:hover, .nav a.active {
-    background-color: var(--azul-claro);
-    transform: translateY(-2px);
+nav a:hover {
+    color: #B40023; /* Red on hover */
 }
 
-.main-content {
-    padding: 2rem 0;
+/* Main Content Area */
+main {
+    padding: 40px 20px;
+    max-width: 1000px; /* Max width for content */
+    margin: 30px auto; /* Center the main content with space */
+    background-color: #ffffff; /* White background for content */
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* More prominent shadow */
 }
 
-.section {
-    margin-bottom: 4rem;
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    display: none;
-}
-
-.section.active {
-    display: block;
-    animation: fadeIn 0.5s ease-in;
-}
-
-.section h2 {
-    color: var(--azul-oscuro);
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+main h2 {
+    color: #05334A; /* Dark blue for main headings */
     text-align: center;
-    border-bottom: 3px solid var(--azul-claro);
-    padding-bottom: 0.5rem;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    border-bottom: 2px solid #6B9EBD; /* Underline effect */
+    padding-bottom: 15px;
 }
 
-.emergency-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.emergency-card {
-    background: linear-gradient(45deg, var(--rojo-claro), var(--rojo-oscuro));
-    color: white;
-    padding: 1.5rem;
-    border-radius: 12px;
+/* Special Text Formatting Example */
+.intro-text {
+    font-style: italic; /* Example of text format change */
     text-align: center;
-    transition: transform 0.3s ease;
-    cursor: pointer;
+    margin-bottom: 30px;
+    color: #710004; /* Dark red for emphasis */
+    font-size: 1.2em;
 }
 
-.emergency-card:hover {
-    transform: scale(1.05);
+/*
+   *** REVISED SECTION FOR INDEX.HTML LAYOUT AND BUTTONS ***
+*/
+.main-layout {
+    display: flex; /* Use Flexbox to align children (buttons and image) */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    gap: 40px; /* Space between the button container and the image */
 }
 
-.emergency-number {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 1rem 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.country-selector {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.country-selector select {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    border: 2px solid var(--azul-claro);
-    border-radius: 25px;
-    background-color: white;
-    color: var(--azul-oscuro);
-    cursor: pointer;
-}
-
-.first-aid-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.first-aid-card {
-    background: white;
-    border: 2px solid var(--azul-claro);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.first-aid-card:hover {
-    border-color: var(--rojo-claro);
-    transform: translateY(-5px);
-}
-
-.first-aid-card h3 {
-    color: var(--azul-oscuro);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-}
-
-.first-aid-steps {
-    display: none;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
-}
-
-.first-aid-steps.show {
-    display: block;
-    animation: slideDown 0.3s ease;
-}
-
-.step {
-    background: linear-gradient(45deg, rgba(102, 155, 188, 0.1), rgba(237, 126, 227, 0.1));
-    padding: 0.8rem;
-    margin: 0.5rem 0;
-    border-radius: 8px;
-    border-left: 4px solid var(--azul-claro);
-}
-
-.prevention-tabs {
+.buttons-container {
     display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-start; /* Align buttons to the left within their container */
+    gap: 15px; /* Space between buttons */
+    min-width: 300px; /* Ensure container has enough width for buttons */
 }
 
-.tab-button {
-    background: var(--beige);
-    color: var(--azul-oscuro);
+.button-large,
+.button-small {
     border: none;
-    padding: 0.8rem 1.5rem;
-    margin: 0.5rem;
-    border-radius: 25px;
+    padding: 20px 40px; /* Unified padding for all buttons */
+    font-size: 1.8em; /* Unified font size for all buttons */
     cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.tab-button:hover, .tab-button.active {
-    background: var(--azul-claro);
-    color: white;
-    transform: translateY(-2px);
-}
-
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-    animation: fadeIn 0.5s ease;
-}
-
-.disease-card {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    margin: 1rem 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-left: 5px solid var(--rojo-claro);
-}
-
-.disease-card h4 {
-    color: var(--azul-oscuro);
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-}
-
-.symptom-list {
-    background: rgba(102, 155, 188, 0.1);
-    padding: 1rem;
-    border-radius: 8px;
-    margin: 1rem 0;
-}
-
-.warning-box {
-    background: linear-gradient(45deg, var(--rojo-claro), var(--rojo-oscuro));
-    color: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin: 2rem 0;
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 280px; /* EXACTLY THE SAME WIDTH FOR ALL BUTTONS */
     text-align: center;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    text-decoration: none; /* Remove underline from anchor tags acting as buttons */
+    display: block; /* Make the anchor tag behave like a block-level button */
 }
 
-.btn-emergency {
-    background: linear-gradient(45deg, var(--rojo-claro), var(--rojo-oscuro));
+.button-large {
+    background-color: #B40023; /* Bright red for emergency */
     color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.1rem;
+}
+
+.button-large:hover {
+    background-color: #710004; /* Darker red on hover */
+}
+
+.button-small {
+    background-color: #6B9EBD; /* Medium blue for smaller buttons */
+    color: #05334A; /* Dark blue text */
+}
+
+.button-small:hover {
+    background-color: #05334A; /* Dark blue on hover */
+    color: #EBE8E3; /* Light text on hover */
+}
+
+.main-image {
+    max-width: 450px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Removed margin-left to let gap handle spacing */
+}
+/*
+   *** END REVISED SECTION ***
+*/
+
+
+/* Specific Page Styles (Emergencia, Primeros Auxilios, Medidas Prevención, Acerca de Nosotras) */
+/* These styles will apply to main h3 elements on sub-pages */
+main h3 {
+    color: #05334A; /* Consistent heading color */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #6B9EBD; /* Dashed underline for subheadings */
+}
+
+main p, main ul, main ol {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+main img { /* Styles for images within main content on sub-pages */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* List Styles (Primeros Auxilios, Medidas Prevención) */
+main ul {
+    list-style-type: disc;
+    margin-left: 25px;
+    padding: 0;
+}
+
+main li {
+    margin-bottom: 8px;
+    padding-left: 5px;
+}
+
+/* Emergency Numbers List (Emergencia.html) */
+.emergency-list li {
+    background-color: #f0f5f9; /* Light background for list items */
+    border-left: 6px solid #6B9EBD; /* Accent border */
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.emergency-list strong {
+    color: #B40023; /* Red for numbers */
+    font-size: 1.2em;
+}
+
+.emergency-list small {
+    display: block;
+    color: #666;
+    margin-top: 5px;
+}
+
+
+/* Form Styles (Acerca_de_nosotras.html) - Bootstrap-like elements */
+.form-container {
+    background-color: #fefefe;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    text-align: left;
+    margin-top: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #05334A;
     font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
+    font-size: 1.1em;
 }
 
-.btn-emergency:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(193, 18, 31, 0.3);
+.form-control {
+    width: calc(100% - 24px); /* Account for padding */
+    padding: 12px;
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 5px;
+    font-size: 1em;
+    color: #495057;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn-secondary {
-    background: var(--azul-claro);
+.form-control:focus {
+    border-color: #6B9EBD; /* Highlight border on focus */
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(107, 158, 189, 0.25); /* Subtle glow on focus */
+}
+
+textarea.form-control {
+    min-height: 120px; /* Larger area for comments */
+    resize: vertical;
+}
+
+.btn-submit {
+    background-color: #6B9EBD; /* Blue submit button */
     color: white;
-    padding: 0.8rem 1.5rem;
+    padding: 14px 30px;
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
     cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
+    display: block; /* Make button full width of its container */
+    width: 100%;
 }
 
-.btn-secondary:hover {
-    background: var(--azul-oscuro);
+.btn-submit:hover {
+    background-color: #05334A; /* Darker blue on hover */
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Footer Styles */
+footer {
+    background-color: #05334A; /* Dark blue footer */
+    color: #EBE8E3; /* Light text on dark footer */
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px; /* Space above footer */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes slideDown {
-    from { opacity: 0; max-height: 0; }
-    to { opacity: 1; max-height: 500px; }
+footer p {
+    margin: 0;
+    font-size: 0.9em;
 }
 
-@keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.1; }
-    50% { transform: scale(1.1); opacity: 0.2; }
+/* Responsive adjustments */
+@media (max-width: 900px) { /* Adjust breakpoint for main layout */
+    .main-layout {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items when stacked */
+    }
+
+    .buttons-container {
+        align-items: center; /* Center buttons when stacked */
+        margin-bottom: 30px; /* Add space below buttons */
+    }
+
+    .main-image {
+        margin-left: 0; /* Remove left margin when stacked */
+        max-width: 90%; /* Make image more responsive */
+    }
 }
 
 @media (max-width: 768px) {
-    .header h1 {
-        font-size: 2rem;
+    header h1 {
+        font-size: 2em;
     }
-    
-    .nav ul {
-        flex-direction: column;
-        align-items: center;
+
+    main {
+        padding: 20px 15px;
+        margin: 20px auto;
     }
-    
-    .nav li {
-        margin: 0.3rem 0;
+
+    .button-large,
+    .button-small {
+        width: 90%; /* Make buttons wider on small screens */
+        max-width: 300px; /* Limit max width for readability */
+        font-size: 1.5em; /* Slightly smaller font for smaller screens */
+        padding: 18px 30px;
     }
-    
-    .prevention-tabs {
-        flex-direction: column;
-        align-items: center;
+
+    main h2 {
+        font-size: 1.8em;
+    }
+
+    main h3 {
+        font-size: 1.5em;
     }
 }
 
-.footer {
-    background-color: var(--azul-oscuro);
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
-}
-
-.icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+@media (max-width: 480px) {
+    header {
+        padding: 15px 0;
+    }
+    header h1 {
+        font-size: 1.5em;
+    }
+    nav {
+        padding: 8px 10px;
+    }
+    nav a {
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+    main {
+        padding: 15px 10px;
+    }
+    .intro-text {
+        font-size: 1em;
+    }
+    .button-large,
+    .button-small {
+        font-size: 1.2em;
+        padding: 15px 20px;
+    }
+    .form-container {
+        padding: 20px;
+    }
 }
