@@ -1,0 +1,351 @@
+/* General Body and Font Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, readable font */
+    margin: 0;
+    padding: 0;
+    background-color: #EBE8E3; /* Light background color */
+    color: #05334A; /* Dark blue for main text */
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #05334A; /* Dark blue header */
+    color: #EBE8E3; /* Light text on dark header */
+    padding: 25px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    letter-spacing: 1px;
+}
+
+/* Navigation Bar Styles (Using Flexbox) */
+nav {
+    background-color: #6B9EBD; /* Medium blue nav bar */
+    padding: 10px 20px;
+    display: flex; /* Enable Flexbox */
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Vertically align items in the center */
+    box-shadow: 0 2px 4px rgba[0, 0, 0, 0.1];
+}
+
+nav a {
+    background-color: transparent;
+    border: none;
+    color: #EBE8E3; /* Light text for nav link */
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+nav a:hover {
+    color: #B40023; /* Red on hover */
+}
+
+/* Main Content Area */
+main {
+    padding: 40px 20px;
+    max-width: 1000px; /* Max width for content */
+    margin: 30px auto; /* Center the main content with space */
+    background-color: #ffffff; /* White background for content */
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+}
+
+main h2 {
+    color: #05334A; /* Dark blue for main headings */
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    border-bottom: 2px solid #6B9EBD; /* Underline effect */
+    padding-bottom: 15px;
+}
+
+/* Special Text Formatting Example */
+.intro-text {
+    font-style: italic; /* Example of text format change */
+    text-align: center;
+    margin-bottom: 30px;
+    color: #710004; /* Dark red for emphasis */
+    font-size: 1.2em;
+}
+
+/*
+   *** REVISED SECTION FOR INDEX.HTML LAYOUT AND BUTTONS ***
+*/
+.main-layout {
+    display: flex; /* Use Flexbox to align children (buttons and image) */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    gap: 40px; /* Space between the button container and the image */
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-start; /* Align buttons to the left within their container */
+    gap: 15px; /* Space between buttons */
+    min-width: 300px; /* Ensure container has enough width for buttons */
+}
+
+.button-large,
+.button-small {
+    border: none;
+    padding: 20px 40px; /* Unified padding for all buttons */
+    font-size: 1.8em; /* Unified font size for all buttons */
+    cursor: pointer;
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 280px; /* EXACTLY THE SAME WIDTH FOR ALL BUTTONS */
+    text-align: center;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    text-decoration: none; /* Remove underline from anchor tags acting as buttons */
+    display: block; /* Make the anchor tag behave like a block-level button */
+}
+
+.button-large {
+    background-color: #B40023; /* Bright red for emergency */
+    color: white;
+}
+
+.button-large:hover {
+    background-color: #710004; /* Darker red on hover */
+}
+
+.button-small {
+    background-color: #6B9EBD; /* Medium blue for smaller buttons */
+    color: #05334A; /* Dark blue text */
+}
+
+.button-small:hover {
+    background-color: #05334A; /* Dark blue on hover */
+    color: #EBE8E3; /* Light text on hover */
+}
+
+.main-image {
+    max-width: 450px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Removed margin-left to let gap handle spacing */
+}
+/*
+   *** END REVISED SECTION ***
+*/
+
+
+/* Specific Page Styles (Emergencia, Primeros Auxilios, Medidas Prevención, Acerca de Nosotras) */
+/* These styles will apply to main h3 elements on sub-pages */
+main h3 {
+    color: #05334A; /* Consistent heading color */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #6B9EBD; /* Dashed underline for subheadings */
+}
+
+main p, main ul, main ol {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+main img { /* Styles for images within main content on sub-pages */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* List Styles (Primeros Auxilios, Medidas Prevención) */
+main ul {
+    list-style-type: disc;
+    margin-left: 25px;
+    padding: 0;
+}
+
+main li {
+    margin-bottom: 8px;
+    padding-left: 5px;
+}
+
+/* Emergency Numbers List (Emergencia.html) */
+.emergency-list li {
+    background-color: #f0f5f9; /* Light background for list items */
+    border-left: 6px solid #6B9EBD; /* Accent border */
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.emergency-list strong {
+    color: #B40023; /* Red for numbers */
+    font-size: 1.2em;
+}
+
+.emergency-list small {
+    display: block;
+    color: #666;
+    margin-top: 5px;
+}
+
+
+/* Form Styles (Acerca_de_nosotras.html) - Bootstrap-like elements */
+.form-container {
+    background-color: #fefefe;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    text-align: left;
+    margin-top: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #05334A;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.form-control {
+    width: calc(100% - 24px); /* Account for padding */
+    padding: 12px;
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 5px;
+    font-size: 1em;
+    color: #495057;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #6B9EBD; /* Highlight border on focus */
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(107, 158, 189, 0.25); /* Subtle glow on focus */
+}
+
+textarea.form-control {
+    min-height: 120px; /* Larger area for comments */
+    resize: vertical;
+}
+
+.btn-submit {
+    background-color: #6B9EBD; /* Blue submit button */
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block; /* Make button full width of its container */
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: #05334A; /* Darker blue on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #05334A; /* Dark blue footer */
+    color: #EBE8E3; /* Light text on dark footer */
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px; /* Space above footer */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) { /* Adjust breakpoint for main layout */
+    .main-layout {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items when stacked */
+    }
+
+    .buttons-container {
+        align-items: center; /* Center buttons when stacked */
+        margin-bottom: 30px; /* Add space below buttons */
+    }
+
+    .main-image {
+        margin-left: 0; /* Remove left margin when stacked */
+        max-width: 90%; /* Make image more responsive */
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    main {
+        padding: 20px 15px;
+        margin: 20px auto;
+    }
+
+    .button-large,
+    .button-small {
+        width: 90%; /* Make buttons wider on small screens */
+        max-width: 300px; /* Limit max width for readability */
+        font-size: 1.5em; /* Slightly smaller font for smaller screens */
+        padding: 18px 30px;
+    }
+
+    main h2 {
+        font-size: 1.8em;
+    }
+
+    main h3 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 0;
+    }
+    header h1 {
+        font-size: 1.5em;
+    }
+    nav {
+        padding: 8px 10px;
+    }
+    nav a {
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+    main {
+        padding: 15px 10px;
+    }
+    .intro-text {
+        font-size: 1em;
+    }
+    .button-large,
+    .button-small {
+        font-size: 1.2em;
+        padding: 15px 20px;
+    }
+    .form-container {
+        padding: 20px;
+    }
+}
